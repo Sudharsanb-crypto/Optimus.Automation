@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenQA.Selenium;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,7 @@ namespace Ecom.Optimus.Automation.Steps
     {
         // For additional details on SpecFlow step definitions see https://go.specflow.org/doc-stepdef
 
+       
         private readonly ScenarioContext context;
 
         public CartSteps(ScenarioContext injectedContext)
@@ -23,6 +25,15 @@ namespace Ecom.Optimus.Automation.Steps
         {
             Pages.Page.cartpage.ReturntoHome();
         }
+
+        [Then(@"I validate correct item is added")]
+        public void ThenIValidateCorrectItemIsAdded()
+        {
+            Pages.Page.cartpage.WaitForElementPresent(By.CssSelector("#shopify-section-cart-template > div > div:nth-child(1) > div > h1"));
+            Pages.Page.cartpage.ValidateItem();
+
+        }
+
 
     }
 }

@@ -143,4 +143,5 @@ E:\Sudharsan\Net fwramework Automation\Ecom.Optimus.Automation\Ecom.Optimus.Fram
 E:\Sudharsan\Net fwramework Automation\Ecom.Optimus.Automation\Ecom.Optimus.Framework\bin\Debug\Newtonsoft.Json.xml
 E:\Sudharsan\Net fwramework Automation\Ecom.Optimus.Automation\Ecom.Optimus.Framework\bin\Debug\RazorEngine.xml
 E:\Sudharsan\Net fwramework Automation\Ecom.Optimus.Automation\Ecom.Optimus.Framework\bin\Debug\System.Web.Razor.xml
-E:\Sudharsan\Net fwramework Automation\Ecom.Optimus.Automation\Ecom.Optimus.Framework\obj\Debug\Ecom.Optimus.Framework.csprojAssemblyReference.cache
+E:\Sudharsan\Net fwramework Automation\Ecom.Optimus.Automation\Ecom.Optimus.Framework\bin\Debug\phantomjs.exe
+E:\Sudharsan\Net fwramework Automation\Ecom.Optimus.Automation\Ecom.Optimus.Framework\bin\Debug\phantomjs-license.txt

@@ -14,9 +14,9 @@ namespace Ecom.Optimus.Framework
         public static void Before_Scenario()
         {
             // read the config files 
-            Collective.configreader();
+          
             // driver initialised
-            Collective.driver = new SelDriverFactory().GetDriver();
+            
 
         }
 
@@ -31,6 +31,14 @@ namespace Ecom.Optimus.Framework
 
         }
 
+        /// <summary>
+        /// Inorder to initialize a test verifying basic info are provided
+        /// </summary>
+        public static void TestInitializeSetup()
+        {
+            Collective.configreader();
+            Collective.driver = new SeleniumDriverFactory().GetDriver();
+        }
 
         private static void KillScript()
         {

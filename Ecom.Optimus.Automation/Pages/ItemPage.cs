@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Ecom.Optimus.Framework.Extensions;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Ecom.Optimus.Automation.Pages
 {
@@ -16,12 +18,18 @@ namespace Ecom.Optimus.Automation.Pages
         public WebElement Item = new WebElement(By.XPath("//*[@id='MainContent']/ul[1]/li[1]/div/a"));
         public WebElement Addtocartbtn = new WebElement(By.Name("add"));
         public WebElement Viewcart = new WebElement(By.CssSelector("body > div.cart-popup-wrapper > div > a"));
-       
         public WebElement Cartclose = new WebElement(By.CssSelector("body > div.cart-popup-wrapper > div > div.cart-popup__dismiss"));
-        
+        public static WebElement ItemTitle = new WebElement(By.CssSelector("#ProductSection-product-template > div > div:nth-child(2) > div.product-single__meta > h1"));
+
+        #region IWebElements
+        private string SizeIdvalue = "SingleOptionSelector-1";
+        #endregion
+
+        public static string itemtitle ;
+
         public void Selectitem()
         {
-            
+            itemtitle = Item.Text;
             Item.Click();
         }
 
@@ -34,16 +42,27 @@ namespace Ecom.Optimus.Automation.Pages
             
         }
 
+      
+
+        public static string itemtext()
+        {
+            
+            return itemtitle;
+        }
+
         public void ViewCart()
         {
             Viewcart.JavaScriptClick();
+
         }
 
         public IWebElement Size; 
 
         public void Additemstocart(int countno)
         {
-            Size = Collective.driver.FindElement(By.Id("SingleOptionSelector-1"));
+           
+
+            Size = Collective.driver.FindElement(By.Id(SizeIdvalue));
              Random rnd = new Random();
 
             string[] sizes = { "XS", "S", "M", "L", "XL", "2XL", "3XL", "4XL" };
@@ -51,7 +70,7 @@ namespace Ecom.Optimus.Automation.Pages
 
             do
             {
-                SelectElement ss = new SelectElement(Size);
+                SelectElement ss = Size.ComboBox();
                 var size = rnd.Next(0, sizes.Length);
                 Console.WriteLine("selected size is " + sizes[size]);
                 ss.SelectByValue(sizes[size]);

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ecom.Optimus.Framework.Basic;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
@@ -30,8 +31,8 @@ namespace Ecom.Optimus.Framework.Config
                     return _browser;
                 else
                     Console.WriteLine("\t\tMissing browser info.");
-
-                return _browser;
+                    throw new TestConfigBrowserEmptyException();
+               
             }
             set
             {
@@ -50,7 +51,7 @@ namespace Ecom.Optimus.Framework.Config
                     return _url;
                 else
                     Console.WriteLine("\t\tMissing Url info.");
-                return _url;
+                throw new TestConfigUrlEmptyException();
             }
             set
             {
@@ -69,7 +70,7 @@ namespace Ecom.Optimus.Framework.Config
                     return _password;
                 else
                     Console.WriteLine("\t\tMissing Password info.");
-                return _password;
+                throw new TestConfigPasswordEmptyException();
             }
             set
             {
@@ -88,7 +89,7 @@ namespace Ecom.Optimus.Framework.Config
                     return _pageloadtime;
                 else
                     Console.WriteLine("\t\tMissing page load time info.");
-                return _pageloadtime;
+                throw new TestConfigPageLoadTimeEmptyException();
             }
             set
             {
@@ -102,12 +103,19 @@ namespace Ecom.Optimus.Framework.Config
         {
             get
             {
-                _impilicitwait = Convert.ToInt32(ConfigurationManager.AppSettings["ImpilicitWait"]);
+                try
+                {
+                    _impilicitwait = Convert.ToInt32(ConfigurationManager.AppSettings["ImpilicitWait"]);
+                }
+                catch(Exception)
+                {
+                    throw new Exception ("Incorrect input format provided in impilicit wait. Input should be integer type");
+                }
                 if (_impilicitwait != 0)
                     return _impilicitwait;
                 else
                     Console.WriteLine("\t\tMissing impilicit wait info.");
-                return _impilicitwait;
+                throw new TestConfigImpilicitWaitEmptyException();
             }
             set
             {
@@ -130,7 +138,7 @@ namespace Ecom.Optimus.Framework.Config
                     return _defaultTimeSpan;
                 else
                     Console.WriteLine("\t\tMissing defaultTimeSpan info.");
-                return _defaultTimeSpan;
+                throw new TestConfigDefaultTimeEmptyException();
             }
             set
             {
@@ -150,7 +158,7 @@ namespace Ecom.Optimus.Framework.Config
                     return _reportfilepath;
                 else
                     Console.WriteLine("\t\tMissing Test report path info.");
-                return _reportfilepath;
+                throw new TestConfigTestReportPathEmptyException();
             }
             set
             {

@@ -2,6 +2,7 @@
 using AventStack.ExtentReports.Gherkin.Model;
 using AventStack.ExtentReports.Reporter;
 using Ecom.Optimus.Framework;
+using Ecom.Optimus.Framework.Basic;
 using Ecom.Optimus.Framework.Common;
 using System;
 using System.Collections.Generic;
@@ -37,6 +38,11 @@ namespace Ecom.Optimus.Automation
         [BeforeTestRun]
         public static void BeforeTestRun()
         {
+           
+                TestHooks.TestInitializeSetup();
+            
+             
+
             //Initialize Extent report before test starts
             string reportpath = Report.ConfigureReport();
             var htmlReporter = new ExtentHtmlReporter(reportpath);
@@ -55,9 +61,9 @@ namespace Ecom.Optimus.Automation
 
             //Create dynamic scenario name
             _currentScenarioName = featureName.CreateNode<Scenario>(_scenarioContext.ScenarioInfo.Title);
+             Before_Scenario();
 
-           
-            Before_Scenario();
+            Test();
 
         }
 
@@ -117,13 +123,16 @@ namespace Ecom.Optimus.Automation
         [AfterTestRun]
         public static void AfterTestRun()
         {
-            extent.Flush();
+        
+              extent.Flush();
         }
 
-        public void AttachScreenshot()
+        public void Test()
         {
-            
+            if (_scenarioContext.TestError != null)
+            {
+                _currentScenarioName.CreateNode(_scenarioContext.ScenarioInfo.Title).Fail("Problem with test initialization");
+            }
         }
-
     }
 }

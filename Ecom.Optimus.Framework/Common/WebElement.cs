@@ -45,6 +45,12 @@ namespace Ecom.Optimus.Framework.Common
             Thread.Sleep(3000);
         }
 
+
+        /// <summary>
+        /// Gets the innerText of this element, without any leading or trailing whitespace, and with other whitespace collapsed.
+        /// </summary>
+        public string Text => FindElement(By).Text;
+
         /// <summary>
         /// Finds the first OpenQA.Selenium.IWebElement using the given method.
         /// </summary>

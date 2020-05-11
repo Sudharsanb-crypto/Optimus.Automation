@@ -38,7 +38,7 @@ namespace Ecom.Optimus.Framework.Common
 
             else
             {
-                Console.WriteLine("Log folder  exists");
+                Console.WriteLine("Test Report folder  exists");
                 if (Directory.Exists(datefolderlocation))
                 {
                     Console.WriteLine("Date folder exists");

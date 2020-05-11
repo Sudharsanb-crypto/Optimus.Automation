@@ -22,7 +22,7 @@ namespace Ecom.Optimus.Automation.Steps
         [When(@"I select an item from results")]
         public void WhenISelectAnItemFromResults()
         {
-            Pages.Page.itempage.WaitForElementPresent(By.XPath("//*[@id='MainContent']/ul[1]/li[1]/div/a"),60);
+            Pages.Page.itempage.WaitForElementPresent(By.XPath("//*[@id='MainContent']/ul[1]/li[1]/div/a/gfhfddf"),60);
             Pages.Page.itempage.Selectitem();
            
         }

@@ -18,13 +18,15 @@ namespace Ecom.Optimus.Automation
     {
         private readonly FeatureContext _featureContext;
         private readonly ScenarioContext _scenarioContext;
+        private readonly Screenshot _screenshot;
         private ExtentTest _currentScenarioName;
 
 
-        public Hooks(FeatureContext featureContext, ScenarioContext scenarioContext)
+        public Hooks(Screenshot screenshot,FeatureContext featureContext, ScenarioContext scenarioContext)
         {
             _featureContext = featureContext;
             _scenarioContext = scenarioContext;
+            _screenshot = screenshot;
         }
 
         private static ExtentTest featureName;
@@ -86,14 +88,15 @@ namespace Ecom.Optimus.Automation
             }
             else if (_scenarioContext.TestError != null)
             {
+                var mediaentity = _screenshot.TakeScreenshot(_scenarioContext.ScenarioInfo.Title.Trim());
                 if (stepType == "Given")
-                    _currentScenarioName.CreateNode<Given>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message);
+                    _currentScenarioName.CreateNode<Given>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message,mediaentity);
                 else if (stepType == "When")
-                    _currentScenarioName.CreateNode<When>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message);
+                    _currentScenarioName.CreateNode<When>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message,mediaentity);
                 else if (stepType == "Then")
-                    _currentScenarioName.CreateNode<Then>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message);
+                    _currentScenarioName.CreateNode<Then>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message,mediaentity);
                 else if (stepType == "And")
-                    _currentScenarioName.CreateNode<And>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message);
+                    _currentScenarioName.CreateNode<And>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message,mediaentity);
 
             }
             else if (_scenarioContext.ScenarioExecutionStatus.ToString() == "StepDefinitionPending")
@@ -115,6 +118,11 @@ namespace Ecom.Optimus.Automation
         public static void AfterTestRun()
         {
             extent.Flush();
+        }
+
+        public void AttachScreenshot()
+        {
+            
         }
 
     }

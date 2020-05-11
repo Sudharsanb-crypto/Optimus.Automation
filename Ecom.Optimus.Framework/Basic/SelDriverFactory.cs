@@ -39,6 +39,7 @@ namespace Ecom.Optimus.Framework.Basic
             driver.Manage().Timeouts().ImplicitWait = (TimeSpan.FromSeconds(0));
             driver.Manage().Timeouts().PageLoad = (TimeSpan.FromSeconds(Collective.PageLoadTime));
             driver.Manage().Cookies.DeleteAllCookies();
+            driver.Manage().Window.Maximize();
 
             return driver;
         }

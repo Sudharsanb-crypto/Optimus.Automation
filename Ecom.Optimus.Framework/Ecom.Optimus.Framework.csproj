@@ -138,6 +138,7 @@
     <Compile Include="Basic\Collective.cs" />
     <Compile Include="Basic\Page.cs" />
     <Compile Include="Common\Report.cs" />
+    <Compile Include="Common\Screenshot.cs" />
     <Compile Include="Common\WebElement.cs" />
     <Compile Include="Common\WebPage.cs" />
     <Compile Include="Config\Configuration.cs" />

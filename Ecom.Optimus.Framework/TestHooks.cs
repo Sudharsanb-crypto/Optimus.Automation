@@ -14,9 +14,7 @@ namespace Ecom.Optimus.Framework
     {
         public static void Before_Scenario()
         {
-            // read the config files 
 
-            // driver initialised
             TestHooks.TestInitializeSetup();
 
         }
@@ -61,6 +59,9 @@ namespace Ecom.Optimus.Framework
             Collective.driver = new SeleniumDriverFactory().GetDriver();
         }
 
+        /// <summary>
+        /// To kill the instance of the chrome driver post execution
+        /// </summary>
         private static void KillScript()
         {
                 Process KillScriptProcess = new Process();

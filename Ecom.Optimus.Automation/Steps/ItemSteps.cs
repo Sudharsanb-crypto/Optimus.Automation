@@ -10,8 +10,7 @@ namespace Ecom.Optimus.Automation.Steps
     [Binding]
     public sealed class ItemSteps
     {
-        // For additional details on SpecFlow step definitions see https://go.specflow.org/doc-stepdef
-
+       
         private readonly ScenarioContext context;
 
         public ItemSteps(ScenarioContext injectedContext)

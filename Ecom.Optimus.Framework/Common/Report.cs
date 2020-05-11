@@ -14,6 +14,10 @@ namespace Ecom.Optimus.Framework.Common
     {
         public static string filelocation;
 
+        /// <summary>
+        /// To configure test report directory
+        /// </summary>
+        /// <returns></returns>
         public static string ConfigureReport()
         {
             string location = null;

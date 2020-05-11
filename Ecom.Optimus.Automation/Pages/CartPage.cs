@@ -12,7 +12,6 @@ namespace Ecom.Optimus.Automation.Pages
     public class CartPage : WebPage
     {
 
-
         #region IWebElements
         private static  string cartpagetitlevalue = "#shopify-section-cart-template>div>div:nth-child(1)>div>h1";
         #endregion

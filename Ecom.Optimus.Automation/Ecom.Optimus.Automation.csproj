@@ -159,7 +159,7 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
-    <None Include="Features\SpecFlowFeaturer.feature" />
+    <None Include="Features\SmokeTest.feature" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ecom.Optimus.Framework\Ecom.Optimus.Framework.csproj">

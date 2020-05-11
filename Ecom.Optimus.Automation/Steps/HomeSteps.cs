@@ -26,5 +26,11 @@ namespace Ecom.Optimus.Automation.Steps
             Pages.Page.homepage.SearchItem(item);
         }
 
+        [Given(@"I scroll down to collections")]
+        public void GivenIScrollDownToCollections()
+        {
+            Pages.Page.homepage.ScrollSelectcollection();
+        }
+
     }
 }

@@ -39,14 +39,12 @@ namespace Ecom.Optimus.Automation
         public static void BeforeTestRun()
         {
 
-            // verify all config values are not null
             CheckconfigInputs();
 
-            //Initialize Extent report before test starts
             string reportpath = Report.ConfigureReport();
             var htmlReporter = new ExtentHtmlReporter(reportpath);
             htmlReporter.Config.Theme = AventStack.ExtentReports.Reporter.Configuration.Theme.Dark;
-            //Attach report to reporter
+        
             extent = new ExtentReports();
             klov = new ExtentKlovReporter();
             extent.AttachReporter(htmlReporter);
@@ -55,10 +53,10 @@ namespace Ecom.Optimus.Automation
         [BeforeScenario]
         public  void BeforeScenario()
         {
-            //Get feature Name
+     
             featureName = extent.CreateTest<Feature>(_featureContext.FeatureInfo.Title);
 
-            //Create dynamic scenario name
+
             _currentScenarioName = featureName.CreateNode<Scenario>(_scenarioContext.ScenarioInfo.Title);
              Before_Scenario();
 
@@ -120,10 +118,7 @@ namespace Ecom.Optimus.Automation
         [AfterTestRun]
         public static void AfterTestRun()
         {
-        
-              extent.Flush();
+            extent.Flush();
         }
-
-      
     }
 }

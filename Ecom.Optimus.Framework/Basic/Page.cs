@@ -8,6 +8,6 @@ namespace Ecom.Optimus.Framework.Basic
 {
     public class Page
     {
-
+        // Future enhancement if login can be used as predefined action while starting the test
     }
 }

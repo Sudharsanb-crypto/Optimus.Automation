@@ -1,5 +1,6 @@
 ﻿using Ecom.Optimus.Framework.Basic;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
@@ -97,6 +98,8 @@ namespace Ecom.Optimus.Framework.Common
                 throw;
             }
         }
+        
+        
         /// <summary>
         /// Wait for Element present
         /// </summary>
@@ -160,5 +163,63 @@ namespace Ecom.Optimus.Framework.Common
         {
             ((IJavaScriptExecutor)Driver).ExecuteScript("arguments[0].click();", element);
         }
+
+        /// <summary>
+        /// get the locationOnScreenOnceScrolledIntoView
+        /// </summary>
+        public System.Drawing.Point LocationOnScreenOnceScrolledIntoView => ((ILocatable)FindElement(By)).LocationOnScreenOnceScrolledIntoView;
+
+
+        /// <summary>
+        /// Returns the css selector
+        /// </summary>
+        public By ElementCssBy => By;
+
+        /// <summary>
+        /// Perform scroll to up operation
+        /// </summary>
+        public void ScrollUp()
+        {
+            Actions builder = new Actions(Driver);
+            IWebElement scroll = FindElement(By);
+
+            int pixels = -20;
+            for (int i = 200; i > 20; i = i + pixels)
+            {
+                builder.MoveToElement(scroll).ClickAndHold().MoveByOffset(0, pixels).Release().Perform();
+                Thread.Sleep(100);
+            }
+        }
+
+        /// <summary>
+        /// Move a scroll to the bottom
+        /// </summary>
+        public void ScrollToTheBottom()
+        {
+            var element = FindElement(By);
+            var executor = Driver as IJavaScriptExecutor;
+            executor.ExecuteScript("$(arguments[0]).scrollTop($(arguments[0]).prop('scrollHeight'))", element);
+        }
+
+        /// <summary>
+        /// Move a scroll until finds the element
+        /// </summary>
+        public void ScrollUntil()
+        {
+            var element = FindElement(By);
+            var executor = Driver as IJavaScriptExecutor;
+            executor.ExecuteScript("arguments[0].scrollIntoView(false);", element);
+        }
+
+        /// <summary>
+        /// Move a scroll to the top
+        /// </summary>
+        public void ScrollToTheTop()
+        {
+            var element = FindElement(By);
+            var executor = Driver as IJavaScriptExecutor;
+            executor.ExecuteScript("$(arguments[0]).scrollTop(0)", element);
+        }
+
     }
 }

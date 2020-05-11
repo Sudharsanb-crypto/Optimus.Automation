@@ -12,6 +12,11 @@ namespace Ecom.Optimus.Framework.Extensions
 {
     public static class IWebElementExtension
     {
+        /// <summary>
+        /// Extension method in instantating Select Element
+        /// </summary>
+        /// <param name="webElement"></param>
+        /// <returns></returns>
         public static SelectElement ComboBox(this IWebElement webElement)
         {
             try
@@ -23,7 +28,11 @@ namespace Ecom.Optimus.Framework.Extensions
                 throw;
             }
         }
-
+        /// <summary>
+        /// Extension method to instantiate Actions to move element
+        /// </summary>
+        /// <param name="webElement"></param>
+        /// <returns></returns>
         public static Actions Actions(this IWebElement webElement)
         {
             try
@@ -39,6 +48,11 @@ namespace Ecom.Optimus.Framework.Extensions
             }
         }
 
+        /// <summary>
+        /// Extension method to instantiate Actions to right click on element
+        /// </summary>
+        /// <param name="webElement"></param>
+        /// <returns></returns>
         public static Actions ContextClick(this IWebElement webElement)
         {
             try
@@ -53,7 +67,12 @@ namespace Ecom.Optimus.Framework.Extensions
                 throw;
             }
         }
-
+        /// <summary>
+        /// Extension method to select options
+        /// </summary>
+        /// <param name="dropdown"></param>
+        /// <param name="subText"></param>
+        /// <returns></returns>
         public static string SelectByTextOrSubText(this SelectElement dropdown, string subText)
         {
             foreach (var items in dropdown.Options.Where(items => items.Text.Contains(subText)))

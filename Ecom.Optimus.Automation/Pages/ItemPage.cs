@@ -21,8 +21,8 @@ namespace Ecom.Optimus.Automation.Pages
         public WebElement Cartclose = new WebElement(By.CssSelector("body > div.cart-popup-wrapper > div > div.cart-popup__dismiss"));
         public static WebElement ItemTitle = new WebElement(By.CssSelector("#ProductSection-product-template > div > div:nth-child(2) > div.product-single__meta > h1"));
         public By Itemm = By.XPath("//*[@id='MainContent']/ul[1]/li[1]/div/a");
-
         public By Itempopup = By.CssSelector("body>div.cart-popup-wrapper>div");
+
 
         #region IWebElements
         private string SizeIdvalue = "SingleOptionSelector-1";
@@ -36,9 +36,6 @@ namespace Ecom.Optimus.Automation.Pages
             Item.Click();
         }
 
-        /// <summary>
-        /// Adding items to cart
-        /// </summary>
         public void Addtocart()
         {
             Addtocartbtn.Click();

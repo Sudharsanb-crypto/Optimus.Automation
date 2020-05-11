@@ -26,6 +26,8 @@ namespace Ecom.Optimus.Automation.Pages
         {
             _loginpage = null;
             _homepage = null;
+            _itempage = null;
+            _cartpage = null;
         }
 
     }

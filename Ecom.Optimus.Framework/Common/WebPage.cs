@@ -18,33 +18,14 @@ namespace Ecom.Optimus.Framework.Common
         public IWebDriver Driver = Collective.driver;
         private int _pollingIntervalInMilliSeconds = 500;
 
+        /// <summary>
+        /// To Refresh the page
         /// </summary>
         public void Refresh()
         {
             Driver.Navigate().Refresh();
-            //WaitForAjax();
+         
         }
-
-        public void Click(IWebElement element)
-        {
-            element.Click();
-        }
-
-        public void SendKeys(IWebElement element, string text)
-        {
-            SendKeys(element, text, false);
-        }
-
-        public void SendKeys(IWebElement element, string text, bool clearText)
-        {
-            if (clearText)
-            {
-                element.Clear();
-            }
-
-            element.SendKeys(text);
-        }
-
 
         /// <summary>
         /// Finds an element on the page
@@ -76,6 +57,36 @@ namespace Ecom.Optimus.Framework.Common
             }
             return webElement;
 
+        }
+
+        /// <summary>
+        /// Navigates to the previous page
+        /// </summary>
+        public void GoBack()
+        {
+            try
+            {
+                Driver.Navigate().Back();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(@"\t\tCannot go back. \r\nError: " + e);
+            }
+        }
+
+        /// <summary>
+        /// Navigates to next page
+        /// </summary>
+        public void GoForward()
+        {
+            try
+            {
+                Driver.Navigate().Forward();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(@"\t\tCannot go forward not enough navigation. \r\nError: " + e);
+            }
         }
     }
 }

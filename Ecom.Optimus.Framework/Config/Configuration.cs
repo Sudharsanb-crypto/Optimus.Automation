@@ -22,6 +22,9 @@ namespace Ecom.Optimus.Framework.Config
             return _config;
         }
 
+        /// <summary>
+        /// Get and set browser value
+        /// </summary>
         public string Browser
         {
             get
@@ -42,6 +45,9 @@ namespace Ecom.Optimus.Framework.Config
         }
         public static string _browser;
 
+        /// <summary>
+        /// Get and set the Url 
+        /// </summary>
         public string Url
         {
             get
@@ -61,6 +67,9 @@ namespace Ecom.Optimus.Framework.Config
         }
         public static string _url;
 
+        /// <summary>
+        /// Get and set Password value
+        /// </summary>
         public string Password
         {
             get
@@ -80,6 +89,9 @@ namespace Ecom.Optimus.Framework.Config
         }
         public static string _password;
 
+        /// <summary>
+        /// Get and set Page load time value
+        /// </summary>
         public int PageLoadTime
         {
             get
@@ -99,6 +111,9 @@ namespace Ecom.Optimus.Framework.Config
         }
         public static int _pageloadtime;
 
+        /// <summary>
+        /// Get and set Implilicit wait 
+        /// </summary>
         public int ImpilicitWait
         {
             get
@@ -148,7 +163,9 @@ namespace Ecom.Optimus.Framework.Config
         }
         private static TimeSpan _defaultTimeSpan;
 
-
+        /// <summary>
+        /// Get and set Test Report File path
+        /// </summary>
         public string TestReportFilePath
         {
             get

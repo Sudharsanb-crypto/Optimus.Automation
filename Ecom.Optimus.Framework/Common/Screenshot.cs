@@ -19,7 +19,11 @@ namespace Ecom.Optimus.Framework.Common
             _scenarioinfo = ScenarioInfo;
         }
 
-
+        /// <summary>
+        /// To capture error screen shot 
+        /// </summary>
+        /// <param name="title"></param>
+        /// <returns></returns>
         public  MediaEntityModelProvider TakeScreenshot(string title)
         {
             var screenshot = ((ITakesScreenshot)Collective.driver).GetScreenshot().AsBase64EncodedString;

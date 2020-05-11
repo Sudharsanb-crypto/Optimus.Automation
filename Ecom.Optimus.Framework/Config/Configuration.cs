@@ -79,5 +79,23 @@ namespace Ecom.Optimus.Framework.Config
         }
         public static string _password;
 
+        public int PageLoadTime
+        {
+            get
+            {
+                _pageloadtime = Convert.ToInt32(ConfigurationManager.AppSettings["PageLoadTime"]);
+                if (_pageloadtime!=0)
+                    return _pageloadtime;
+                else
+                    Console.WriteLine("\t\tMissing page load time info.");
+                return _pageloadtime;
+            }
+            set
+            {
+                _pageloadtime = value;
+
+            }
+        }
+        public static int _pageloadtime;
     }
 }

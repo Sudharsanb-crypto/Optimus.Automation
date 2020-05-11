@@ -60,6 +60,7 @@
     <Compile Include="Collective.cs" />
     <Compile Include="Config\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelDriverFactory.cs" />
     <Compile Include="TestHooks.cs" />
   </ItemGroup>
   <ItemGroup>

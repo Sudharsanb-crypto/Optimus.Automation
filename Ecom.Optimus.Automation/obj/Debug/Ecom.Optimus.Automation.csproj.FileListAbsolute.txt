@@ -137,3 +137,5 @@ E:\Sudharsan\Net fwramework Automation\Ecom.Optimus.Automation\Ecom.Optimus.Auto
 E:\Sudharsan\Net fwramework Automation\Ecom.Optimus.Automation\Ecom.Optimus.Automation\bin\Debug\WebDriver.xml
 E:\Sudharsan\Net fwramework Automation\Ecom.Optimus.Automation\Ecom.Optimus.Automation\bin\Debug\WebDriver.Support.xml
 E:\Sudharsan\Net fwramework Automation\Ecom.Optimus.Automation\Ecom.Optimus.Automation\obj\Debug\Ecom.Optimus.Automation.csprojAssemblyReference.cache
+E:\Sudharsan\Net fwramework Automation\Ecom.Optimus.Automation\Ecom.Optimus.Automation\bin\Debug\Ecom.Optimus.Framework.dll
+E:\Sudharsan\Net fwramework Automation\Ecom.Optimus.Automation\Ecom.Optimus.Automation\bin\Debug\Ecom.Optimus.Framework.pdb

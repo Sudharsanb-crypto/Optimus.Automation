@@ -212,6 +212,9 @@ this.ScenarioInitialize(scenarioInfo);
    testRunner.Then("I click on view cart button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 28
+   testRunner.And("I validate correct item is added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 29
    testRunner.And("I return to home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }

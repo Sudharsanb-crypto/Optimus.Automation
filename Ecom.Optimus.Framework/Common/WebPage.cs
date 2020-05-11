@@ -45,29 +45,6 @@ namespace Ecom.Optimus.Framework.Common
             element.SendKeys(text);
         }
 
-        /// <summary>
-        /// Wait for element to be displayed
-        /// </summary>
-        /// <param name="by"></param>
-        /// <param name="timeout"></param>
-        public void WaitForElementPresent(By by, int timeout = 0)
-        {
-            var wait = (timeout == 0) ? new WebDriverWait(Driver, Collective.DefaultTimeSpan) : new WebDriverWait(Driver, new TimeSpan(0, 0, timeout));
-            try
-            {
-                wait.Until(d =>
-                {
-                    var e = FindElement(by);
-                    return e.Displayed;
-                }
-                    );
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("\t\telement is not present.");
-                throw new Exception("Timeout exception unable to identify element");
-            }
-        }
 
         /// <summary>
         /// Finds an element on the page

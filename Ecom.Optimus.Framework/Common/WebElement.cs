@@ -1,5 +1,6 @@
 ﻿using Ecom.Optimus.Framework.Basic;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -96,7 +97,29 @@ namespace Ecom.Optimus.Framework.Common
                 throw;
             }
         }
-
+        /// <summary>
+        /// Wait for Element present
+        /// </summary>
+        /// <param name="by"></param>
+        /// <param name="timeout"></param>
+        public void WaitForElementPresent( By by,int timeout=0)
+        {
+            var wait = (timeout == 0) ? new WebDriverWait(Driver, Collective.DefaultTimeSpan) : new WebDriverWait(Driver, new TimeSpan(0, 0, timeout));
+            try
+            {
+                wait.Until(d =>
+                {
+                    var e = FindElement(by);
+                    return e.Displayed;
+                }
+              );
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("\t\telement is not present.");
+                throw new Exception("Timeout exception unable to identify element");
+            }
+        }
 
         /// <summary>
         /// Simulates typing text into the element.

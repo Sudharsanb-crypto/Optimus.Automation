@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Ecom.Optimus.Framework.Basic;
+using Ecom.Optimus.Framework.Config;
 
 namespace Ecom.Optimus.Framework
 {
@@ -14,9 +15,9 @@ namespace Ecom.Optimus.Framework
         public static void Before_Scenario()
         {
             // read the config files 
-          
+
             // driver initialised
-            
+            TestHooks.TestInitializeSetup();
 
         }
 
@@ -29,6 +30,26 @@ namespace Ecom.Optimus.Framework
             }
 
 
+        }
+
+
+        /// <summary>
+        /// To validate the configuration values before initiating the test
+        /// </summary>
+        public static void CheckconfigInputs()
+        {
+            if (Configuration.GetInfo().Browser != null)
+            { }
+            if (Configuration.GetInfo().Url != null)
+            { }
+            if (Configuration.GetInfo().Password != null)
+            { }
+            if (Configuration.GetInfo().PageLoadTime !=0)
+            { }
+            if (Configuration.GetInfo().ImpilicitWait != 0)
+            { }
+            if (Configuration.GetInfo().TestReportFilePath != null)
+            { }
         }
 
         /// <summary>

@@ -29,7 +29,7 @@ namespace Ecom.Optimus.Automation.Steps
         [Then(@"I validate correct item is added")]
         public void ThenIValidateCorrectItemIsAdded()
         {
-            Pages.Page.cartpage.WaitForElementPresent(By.CssSelector("#shopify-section-cart-template > div > div:nth-child(1) > div > h1"));
+            Pages.Page.cartpage.PageNavigation();
             Pages.Page.cartpage.ValidateItem();
 
         }

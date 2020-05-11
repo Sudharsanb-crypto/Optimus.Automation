@@ -22,7 +22,7 @@ namespace Ecom.Optimus.Automation.Steps
         [When(@"I select an item from results")]
         public void WhenISelectAnItemFromResults()
         {
-            Pages.Page.itempage.WaitForElementPresent(By.XPath("//*[@id='MainContent']/ul[1]/li[1]/div/a"),60);
+            Pages.Page.itempage.Waitforitem();
             Pages.Page.itempage.Selectitem();
            
         }
@@ -31,7 +31,7 @@ namespace Ecom.Optimus.Automation.Steps
         public void WhenIClickAddToCartButton()
         {
             Pages.Page.itempage.Addtocart();
-            Pages.Page.itempage.WaitForElementPresent(By.CssSelector("body > div.cart-popup-wrapper > div"),500);
+            Pages.Page.itempage.WaitforItempopup();
         }
 
 
@@ -39,6 +39,7 @@ namespace Ecom.Optimus.Automation.Steps
         public void ThenIClickOnViewCartButton()
         {
             Pages.Page.itempage.ViewCart();
+            Pages.Page.cartpage.PageNavigation();
         }
 
         [When(@"I select pick random (.*) sizes of item")]

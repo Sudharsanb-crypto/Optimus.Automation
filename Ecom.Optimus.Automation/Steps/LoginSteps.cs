@@ -36,20 +36,6 @@ namespace Ecom.Optimus.Automation
         }
 
 
-        [When("I press add")]
-        public void WhenIPressAdd()
-        {
-            //TODO: implement act (action) logic
-
-           
-        }
-
-        [Then("the result should be (.*) on the screen")]
-        public void ThenTheResultShouldBe(int result)
-        {
-            //TODO: implement assert (verification) logic
-
-           
-        }
+     
     }
 }

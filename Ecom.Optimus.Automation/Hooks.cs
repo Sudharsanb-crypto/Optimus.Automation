@@ -38,10 +38,9 @@ namespace Ecom.Optimus.Automation
         [BeforeTestRun]
         public static void BeforeTestRun()
         {
-           
-                TestHooks.TestInitializeSetup();
-            
-             
+
+            // verify all config values are not null
+            CheckconfigInputs();
 
             //Initialize Extent report before test starts
             string reportpath = Report.ConfigureReport();
@@ -54,7 +53,7 @@ namespace Ecom.Optimus.Automation
         }
 
         [BeforeScenario]
-        public  void BeforeSCenario()
+        public  void BeforeScenario()
         {
             //Get feature Name
             featureName = extent.CreateTest<Feature>(_featureContext.FeatureInfo.Title);
@@ -62,8 +61,6 @@ namespace Ecom.Optimus.Automation
             //Create dynamic scenario name
             _currentScenarioName = featureName.CreateNode<Scenario>(_scenarioContext.ScenarioInfo.Title);
              Before_Scenario();
-
-            Test();
 
         }
 
@@ -127,12 +124,6 @@ namespace Ecom.Optimus.Automation
               extent.Flush();
         }
 
-        public void Test()
-        {
-            if (_scenarioContext.TestError != null)
-            {
-                _currentScenarioName.CreateNode(_scenarioContext.ScenarioInfo.Title).Fail("Problem with test initialization");
-            }
-        }
+      
     }
 }

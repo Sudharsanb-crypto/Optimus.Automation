@@ -29,10 +29,7 @@ namespace Ecom.Optimus.Automation
         [Given(@"I login to application")]
         public void GivenILoginToApplication()
         {
-           /* Pages.Page.loginpage.Enterusingpwdbtn.Click();
-            Pages.Page.loginpage.Passwordedtbox.Click();
-            Pages.Page.loginpage.Passwordedtbox.SendKeys(Collective.Password);
-            Pages.Page.loginpage.Enterbtn.Click(); */
+        
 
             Pages.Page.loginpage.Login();
 

@@ -65,6 +65,7 @@ namespace Ecom.Optimus.Framework.Common
             catch (Exception)
             {
                 Console.WriteLine("\t\telement is not present.");
+                throw new Exception("Timeout exception unable to identify element");
             }
         }
 

@@ -28,6 +28,7 @@ namespace Ecom.Optimus.Automation
         public static void AfterScenario()
         {
             After_Scenario();
+            Pages.Page.Reset();
         }
 
         [BeforeStep]

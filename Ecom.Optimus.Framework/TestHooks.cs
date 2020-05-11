@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Ecom.Optimus.Framework.Config;
+using Ecom.Optimus.Framework.Basic;
 
 namespace Ecom.Optimus.Framework
 {
@@ -20,11 +22,23 @@ namespace Ecom.Optimus.Framework
 
         public static void After_Scenario()
         {
-
             if(Collective.driver!=null)
             {
                 Collective.driver.Dispose();
+                KillScript();
             }
+
+
+        }
+
+
+        private static void KillScript()
+        {
+                Process KillScriptProcess = new Process();
+                string location = Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + @"\SessionKiller.bat";
+                KillScriptProcess.StartInfo.FileName = location;
+                KillScriptProcess.Start();
+                KillScriptProcess.WaitForExit();
         }
     }
 }

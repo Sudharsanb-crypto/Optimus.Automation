@@ -97,5 +97,24 @@ namespace Ecom.Optimus.Framework.Config
             }
         }
         public static int _pageloadtime;
+
+        public int ImpilicitWait
+        {
+            get
+            {
+                _impilicitwait = Convert.ToInt32(ConfigurationManager.AppSettings["ImpilicitWait"]);
+                if (_impilicitwait != 0)
+                    return _impilicitwait;
+                else
+                    Console.WriteLine("\t\tMissing impilicit wait info.");
+                return _impilicitwait;
+            }
+            set
+            {
+                _impilicitwait = value;
+
+            }
+        }
+        public static int _impilicitwait;
     }
 }

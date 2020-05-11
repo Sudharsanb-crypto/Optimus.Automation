@@ -1,7 +1,7 @@
 <B> Optimus Automation Solution </B>
     
 		An hybrid automation framework has been developed to automate Optimus web application using  NET Framework 4.7 
-		with C#.
+		with C#. POM design pattern used to handle web elements
 		
     Features available: 
     

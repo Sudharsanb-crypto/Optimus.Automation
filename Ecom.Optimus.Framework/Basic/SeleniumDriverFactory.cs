@@ -34,6 +34,14 @@ namespace Ecom.Optimus.Framework.Basic
                     driver = new FirefoxDriver();
                     break;
 
+                case "headless":
+                    var chromeOptions = new ChromeOptions();
+                    chromeOptions.AddArguments("headless");
+                    driver = new ChromeDriver(chromeOptions);
+                    break;
+
+
+
                 default:
                     throw new IncorrectBrowserException();
                     

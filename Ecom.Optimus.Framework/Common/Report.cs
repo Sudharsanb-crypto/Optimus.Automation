@@ -30,7 +30,7 @@ namespace Ecom.Optimus.Framework.Common
 
             if (!Directory.Exists(rootfolderlocation))
             {
-                Console.WriteLine("Log folder  created");
+                Printer.ConsoleWriter("Log folder  created");
                 Directory.CreateDirectory(rootfolderlocation);
 
                 Directory.CreateDirectory(datefolderlocation);
@@ -42,16 +42,16 @@ namespace Ecom.Optimus.Framework.Common
 
             else
             {
-                Console.WriteLine("Test Report folder  exists");
+                Printer.ConsoleWriter("Test Report folder  exists");
                 if (Directory.Exists(datefolderlocation))
                 {
-                    Console.WriteLine("Date folder exists");
+                    Printer.ConsoleWriter("Date folder exists");
 
 
                 }
                 else if (!Directory.Exists(datefolderlocation))
                 {
-                    Console.WriteLine("Date folder doesn't exists");
+                    Printer.ConsoleWriter("Date folder doesn't exists");
                     Directory.CreateDirectory(datefolderlocation);
 
                 }

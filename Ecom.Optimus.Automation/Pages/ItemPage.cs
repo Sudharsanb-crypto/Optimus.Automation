@@ -80,7 +80,7 @@ namespace Ecom.Optimus.Automation.Pages
             {
                 SelectElement ss = Size.ComboBox();
                 var size = rnd.Next(0, sizes.Length);
-                Console.WriteLine("selected size is " + sizes[size]);
+                Printer.ConsoleWriter("selected size is " + sizes[size]);
                 ss.SelectByValue(sizes[size]);
 
                 Addtocartbtn.Waitforsec();

@@ -1,4 +1,5 @@
 ﻿using Ecom.Optimus.Framework.Basic;
+using Ecom.Optimus.Framework.Common;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -33,7 +34,7 @@ namespace Ecom.Optimus.Framework.Config
                 if (!string.IsNullOrEmpty(_browser))
                     return _browser;
                 else
-                    Console.WriteLine("\t\tMissing browser info.");
+                    Printer.ConsoleWriter("\t\tMissing browser info.");
                     throw new TestConfigBrowserEmptyException();
                
             }
@@ -56,7 +57,7 @@ namespace Ecom.Optimus.Framework.Config
                 if (!string.IsNullOrEmpty(_url))
                     return _url;
                 else
-                    Console.WriteLine("\t\tMissing Url info.");
+                    Printer.ConsoleWriter("\t\tMissing Url info.");
                 throw new TestConfigUrlEmptyException();
             }
             set
@@ -78,7 +79,7 @@ namespace Ecom.Optimus.Framework.Config
                 if (!string.IsNullOrEmpty(_password))
                     return _password;
                 else
-                    Console.WriteLine("\t\tMissing Password info.");
+                    Printer.ConsoleWriter("\t\tMissing Password info.");
                 throw new TestConfigPasswordEmptyException();
             }
             set
@@ -100,7 +101,7 @@ namespace Ecom.Optimus.Framework.Config
                 if (_pageloadtime!=0)
                     return _pageloadtime;
                 else
-                    Console.WriteLine("\t\tMissing page load time info.");
+                    Printer.ConsoleWriter("\t\tMissing page load time info.");
                 throw new TestConfigPageLoadTimeEmptyException();
             }
             set
@@ -129,7 +130,7 @@ namespace Ecom.Optimus.Framework.Config
                 if (_impilicitwait != 0)
                     return _impilicitwait;
                 else
-                    Console.WriteLine("\t\tMissing impilicit wait info.");
+                    Printer.ConsoleWriter("\t\tMissing impilicit wait info.");
                 throw new TestConfigImpilicitWaitEmptyException();
             }
             set
@@ -152,13 +153,13 @@ namespace Ecom.Optimus.Framework.Config
                 if (ImpilicitWait != 0)
                     return _defaultTimeSpan;
                 else
-                    Console.WriteLine("\t\tMissing defaultTimeSpan info.");
+                    Printer.ConsoleWriter("\t\tMissing defaultTimeSpan info.");
                 throw new TestConfigDefaultTimeEmptyException();
             }
             set
             {
                 _defaultTimeSpan = value;
-                Console.WriteLine(@"\t\tMissing defaultTimeSpan info. Default to {_defaultTimeSpan}");
+                Printer.ConsoleWriter(@"\t\tMissing defaultTimeSpan info. Default to {_defaultTimeSpan}");
             }
         }
         private static TimeSpan _defaultTimeSpan;
@@ -174,7 +175,7 @@ namespace Ecom.Optimus.Framework.Config
                 if (!string.IsNullOrEmpty(_reportfilepath))
                     return _reportfilepath;
                 else
-                    Console.WriteLine("\t\tMissing Test report path info.");
+                    Printer.ConsoleWriter("\t\tMissing Test report path info.");
                 throw new TestConfigTestReportPathEmptyException();
             }
             set

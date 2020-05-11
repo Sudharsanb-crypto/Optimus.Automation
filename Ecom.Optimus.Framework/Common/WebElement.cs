@@ -90,7 +90,7 @@ namespace Ecom.Optimus.Framework.Common
                 TimeSpan ts = stopWatch.Elapsed;
                 // Format and display the TimeSpan value.
                 var elapsedTime = $"{ts.Hours:00}:{ts.Minutes:00}:{ts.Seconds:00}.{ts.Milliseconds / 10:00}";
-                Console.WriteLine("\t\tFindElement - Time spent: " + elapsedTime);
+                Printer.ConsoleWriter("\t\tFindElement - Time spent: " + elapsedTime);
                 return webElement;
             }
             catch (Exception)
@@ -119,7 +119,7 @@ namespace Ecom.Optimus.Framework.Common
             }
             catch (Exception)
             {
-                Console.WriteLine("\t\telement is not present.");
+                Printer.ConsoleWriter("\t\telement is not present.");
                 throw new Exception("Timeout exception unable to identify element");
             }
         }
@@ -221,5 +221,36 @@ namespace Ecom.Optimus.Framework.Common
             executor.ExecuteScript("$(arguments[0]).scrollTop(0)", element);
         }
 
+        /// <summary>
+        /// Wait for the element is not be present
+        /// </summary>
+        /// <param name="by"></param>
+        /// <param name="timeout"></param>
+        public void WaitForElementNotPresent(By by, int timeout = 0)
+        {
+            var wait = (timeout == 0) ? new WebDriverWait(Driver, Collective.DefaultTimeSpan) : new WebDriverWait(Driver, new TimeSpan(0, 0, timeout));
+            Thread.Sleep(1000);
+            try
+            {
+                wait.Until(d =>
+                {
+                    var e = FindElement(by);
+                    return (e == null || !e.Displayed);
+                }
+                    );
+            }
+            catch (NoSuchElementException)
+            {
+                Printer.ConsoleWriter("\t\telement is not present.");
+            }
+            catch (ElementNotVisibleException)
+            {
+                Printer.ConsoleWriter("\t\telement is not present.");
+            }
+            catch (TimeoutException)
+            {
+                Printer.ConsoleWriter("\t\telement is not present.");
+            }
+        }
     }
 }

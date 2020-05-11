@@ -70,7 +70,7 @@ namespace Ecom.Optimus.Framework.Common
             }
             catch (Exception e)
             {
-                Console.WriteLine(@"\t\tCannot go back. \r\nError: " + e);
+                Printer.ConsoleWriter(@"\t\tCannot go back. \r\nError: " + e);
             }
         }
 
@@ -85,7 +85,7 @@ namespace Ecom.Optimus.Framework.Common
             }
             catch (Exception e)
             {
-                Console.WriteLine(@"\t\tCannot go forward not enough navigation. \r\nError: " + e);
+                Printer.ConsoleWriter(@"\t\tCannot go forward not enough navigation. \r\nError: " + e);
             }
         }
     }

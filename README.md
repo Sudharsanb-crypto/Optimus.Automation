@@ -34,7 +34,7 @@
 				 
 			To be started : 
 			    1) Download the code and rebuild the solution.Once the nuget packages were build in the solution. 
-		      2) Configure the app.config file with browser, test report path are configured
+		            2) Configure the app.config file with browser, test report path are configured
 						 
 			  
 			

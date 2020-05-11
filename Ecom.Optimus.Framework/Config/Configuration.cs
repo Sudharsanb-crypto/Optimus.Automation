@@ -139,5 +139,25 @@ namespace Ecom.Optimus.Framework.Config
             }
         }
         private static TimeSpan _defaultTimeSpan;
+
+
+        public string TestReportFilePath
+        {
+            get
+            {
+                _reportfilepath = ConfigurationManager.AppSettings["TestReportsPath"].ToString();
+                if (!string.IsNullOrEmpty(_reportfilepath))
+                    return _reportfilepath;
+                else
+                    Console.WriteLine("\t\tMissing Test report path info.");
+                return _reportfilepath;
+            }
+            set
+            {
+                _reportfilepath = value;
+
+            }
+        }
+        public static string _reportfilepath;
     }
 }

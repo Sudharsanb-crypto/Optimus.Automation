@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Ecom.Optimus.Framework.Config;
+using System.IO;
 
 namespace Ecom.Optimus.Framework.Basic
 {
@@ -24,6 +25,8 @@ namespace Ecom.Optimus.Framework.Basic
 
         public static TimeSpan DefaultTimeSpan { get; set; }
 
+        public static string TestReportPath { get; set; }
+
         public static void configreader()
         {
             Browser = Configuration.GetInfo().Browser;
@@ -31,6 +34,7 @@ namespace Ecom.Optimus.Framework.Basic
             Password = Configuration.GetInfo().Password;
             PageLoadTime = Configuration.GetInfo().PageLoadTime;
             DefaultTimeSpan = Configuration.GetInfo().DefaultTimeSpan;
+            TestReportPath = Configuration.GetInfo().TestReportFilePath;
         }
     }
 }

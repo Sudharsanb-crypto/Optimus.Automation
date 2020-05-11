@@ -2,6 +2,7 @@
 using AventStack.ExtentReports.Gherkin.Model;
 using AventStack.ExtentReports.Reporter;
 using Ecom.Optimus.Framework;
+using Ecom.Optimus.Framework.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,7 +36,8 @@ namespace Ecom.Optimus.Automation
         public static void BeforeTestRun()
         {
             //Initialize Extent report before test starts
-            var htmlReporter = new ExtentHtmlReporter(@"E:\Reports\ExtentReport.html");
+            string reportpath = Report.ConfigureReport();
+            var htmlReporter = new ExtentHtmlReporter(reportpath);
             htmlReporter.Config.Theme = AventStack.ExtentReports.Reporter.Configuration.Theme.Dark;
             //Attach report to reporter
             extent = new ExtentReports();

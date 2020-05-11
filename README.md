@@ -22,9 +22,9 @@
 		
 		Supported Browsers :
 		        
-			 Chrome & Firefox
+			 Latest versions of Chrome & Firefox
 		
-	         Nuget Packages used: 
+	         Latest stable Nuget Packages used: 
 		    
 				 Selenium Web Driver 
 				 Selenium Support

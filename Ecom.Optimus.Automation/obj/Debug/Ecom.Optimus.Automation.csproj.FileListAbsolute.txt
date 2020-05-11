@@ -132,3 +132,8 @@ E:\Sudharsan\Net fwramework Automation\Ecom.Optimus.Automation\Ecom.Optimus.Auto
 E:\Sudharsan\Net fwramework Automation\Ecom.Optimus.Automation\Ecom.Optimus.Automation\obj\Debug\Ecom.Optimus.Automation.csproj.CopyComplete
 E:\Sudharsan\Net fwramework Automation\Ecom.Optimus.Automation\Ecom.Optimus.Automation\obj\Debug\Ecom.Optimus.Automation.dll
 E:\Sudharsan\Net fwramework Automation\Ecom.Optimus.Automation\Ecom.Optimus.Automation\obj\Debug\Ecom.Optimus.Automation.pdb
+E:\Sudharsan\Net fwramework Automation\Ecom.Optimus.Automation\Ecom.Optimus.Automation\bin\Debug\WebDriver.dll
+E:\Sudharsan\Net fwramework Automation\Ecom.Optimus.Automation\Ecom.Optimus.Automation\bin\Debug\WebDriver.Support.dll
+E:\Sudharsan\Net fwramework Automation\Ecom.Optimus.Automation\Ecom.Optimus.Automation\bin\Debug\WebDriver.xml
+E:\Sudharsan\Net fwramework Automation\Ecom.Optimus.Automation\Ecom.Optimus.Automation\bin\Debug\WebDriver.Support.xml
+E:\Sudharsan\Net fwramework Automation\Ecom.Optimus.Automation\Ecom.Optimus.Automation\obj\Debug\Ecom.Optimus.Automation.csprojAssemblyReference.cache

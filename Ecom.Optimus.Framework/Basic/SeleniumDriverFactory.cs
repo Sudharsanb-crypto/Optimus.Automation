@@ -5,6 +5,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,17 @@ namespace Ecom.Optimus.Framework.Basic
         public IWebDriver driver;
         public IObjectContainer _objectcontainer;
 
+        public void SetWindowSize(Boolean? isMobile = null, Boolean? isipad = null)
+        {
+            if (isMobile == true)
+                driver.Manage().Window.Size = new Size(400, 1200);
+            else if (isipad == true)
+                driver.Manage().Window.Size = new Size(768, 1024);
+            else
+            {
+                driver.Manage().Window.Size = new Size(600, 1024);
+            }
+        }
 
         public IWebDriver GetDriver()
         {
@@ -27,7 +39,12 @@ namespace Ecom.Optimus.Framework.Basic
             switch(browser.ToLower())
             {
                 case "chrome":
-                    driver = new ChromeDriver();
+                    var options = new ChromeOptions();
+                    options.AddArgument("--disable-web-security");
+                    options.AddArgument("--allow-running-insecure-content");
+                    options.AddArgument("--ignore-ssl-errors");
+                    options.AddArgument("disable-extensions");
+                    driver = new ChromeDriver(options);
                     break;
 
                 case "firefox":
@@ -40,19 +57,17 @@ namespace Ecom.Optimus.Framework.Basic
                     driver = new ChromeDriver(chromeOptions);
                     break;
 
-
-
                 default:
                     throw new IncorrectBrowserException();
-                    
-
+                   
             }
 
-            driver.Url = Collective.Url;
+            SetWindowSize(); // setting window size for mobile ipad
             driver.Manage().Timeouts().ImplicitWait = (TimeSpan.FromSeconds(0));
             driver.Manage().Timeouts().PageLoad = (TimeSpan.FromSeconds(Collective.PageLoadTime));
             driver.Manage().Cookies.DeleteAllCookies();
             driver.Manage().Window.Maximize();
+            driver.Url = Collective.Url;
 
             return driver;
         }

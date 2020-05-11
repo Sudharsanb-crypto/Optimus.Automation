@@ -37,6 +37,15 @@ namespace Ecom.Optimus.Framework.Common
         }
 
         /// <summary>
+        /// To avoid coding thread sleep with different timings 
+        /// For the sake of user to understand the flow of automation script 
+        /// </summary>
+        public void Waitforsec()
+        {
+            Thread.Sleep(3000);
+        }
+
+        /// <summary>
         /// Finds the first OpenQA.Selenium.IWebElement using the given method.
         /// </summary>
         /// <param name="by"></param>
@@ -104,6 +113,23 @@ namespace Ecom.Optimus.Framework.Common
             }
             FindElement(By).SendKeys(text);
 
+        }
+
+        /// <summary>
+        /// Click on element using java script
+        /// </summary>
+        public void JavaScriptClick()
+        {
+            var element = FindElement(By);
+            ((IJavaScriptExecutor)Driver).ExecuteScript("arguments[0].click();", element);
+        }
+        /// <summary>
+        /// Java click on IWebElement
+        /// </summary>
+        /// <param name="element"></param>
+        public void JavaScriptClick(IWebElement element)
+        {
+            ((IJavaScriptExecutor)Driver).ExecuteScript("arguments[0].click();", element);
         }
     }
 }

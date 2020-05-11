@@ -116,5 +116,28 @@ namespace Ecom.Optimus.Framework.Config
             }
         }
         public static int _impilicitwait;
+
+
+        /// <summary>
+        /// Get and set for defaultTimeSpan
+        /// </summary>
+        public TimeSpan DefaultTimeSpan
+        {
+            get
+            {
+                _defaultTimeSpan = new TimeSpan(0, 0, ImpilicitWait);
+                if (ImpilicitWait != 0)
+                    return _defaultTimeSpan;
+                else
+                    Console.WriteLine("\t\tMissing defaultTimeSpan info.");
+                return _defaultTimeSpan;
+            }
+            set
+            {
+                _defaultTimeSpan = value;
+                Console.WriteLine(@"\t\tMissing defaultTimeSpan info. Default to {_defaultTimeSpan}");
+            }
+        }
+        private static TimeSpan _defaultTimeSpan;
     }
 }

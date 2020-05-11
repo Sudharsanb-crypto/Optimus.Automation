@@ -22,13 +22,15 @@ namespace Ecom.Optimus.Framework.Basic
 
         public static int ImplicitWaitTimeOut { get; set; }
 
+        public static TimeSpan DefaultTimeSpan { get; set; }
+
         public static void configreader()
         {
             Browser = Configuration.GetInfo().Browser;
             Url = Configuration.GetInfo().Url;
             Password = Configuration.GetInfo().Password;
             PageLoadTime = Configuration.GetInfo().PageLoadTime;
-            
+            DefaultTimeSpan = Configuration.GetInfo().DefaultTimeSpan;
         }
     }
 }

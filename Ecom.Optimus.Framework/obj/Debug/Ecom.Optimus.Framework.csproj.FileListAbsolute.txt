@@ -126,3 +126,4 @@ E:\Sudharsan\Net fwramework Automation\Ecom.Optimus.Automation\Ecom.Optimus.Fram
 E:\Sudharsan\Net fwramework Automation\Ecom.Optimus.Automation\Ecom.Optimus.Framework\obj\Debug\Ecom.Optimus.Framework.dll
 E:\Sudharsan\Net fwramework Automation\Ecom.Optimus.Automation\Ecom.Optimus.Framework\obj\Debug\Ecom.Optimus.Framework.pdb
 E:\Sudharsan\Net fwramework Automation\Ecom.Optimus.Automation\Ecom.Optimus.Framework\bin\Debug\SessionKiller.bat
+E:\Sudharsan\Net fwramework Automation\Ecom.Optimus.Automation\Ecom.Optimus.Framework\obj\Debug\Ecom.Optimus.Framework.csprojAssemblyReference.cache
